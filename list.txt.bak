@@ -1,0 +1,21 @@
+一、本项目的知识要点
+1、//webpack-dev-server是一个静态文件服务器
+2、webpack --watch 代码监听器
+3、webpack-dev-server --hot --inline --port 4000(inline模式(将webpack-dev-sever的客户端入口添加到包(bundle)中))
+4、
+功能点
+共享：
+邀请朋友一起完成你的计划，共享其中的五味杂陈。
+交流：
+和你有共同兴趣的人讨论你们的计划，向他们提问；
+计划管理：
+一目了然所有人的进度，激励自己前进；
+清晰看到你个人的计划，不再遗憾；
+提醒：[微博形式的展现方式]
+强大的提醒功能，帮你不再拖延
+知识：
+沉淀你个人的知识；
+分享：
+分享你在这里的一切；
+
+网站参考:https://www.rishiqing.com/、https://dida365.com/、http://www.golaravel.com/、http://www.jingoal.com/index.html
