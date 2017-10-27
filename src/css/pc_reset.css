@@ -11,6 +11,8 @@ ul{margin-left:0;padding-left:0 !important;}
 .fl{float: left;}
 .fr{float: right;}
 .cssanimations [data-am-scrollspy*=animation]{opacity: 1 !important;}
+.ant-modal-header{text-align: center;}
+.ant-modal-footer{display: none;}
 
 
 /*首页导航部分*/

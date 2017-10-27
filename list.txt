@@ -18,4 +18,18 @@
 分享：
 分享你在这里的一切；
 
+ 计划名称；
+计划的分类；  计划的模板选择（快速创建）； 是否可以实现分类即模板；或者就是几种模板 ； 
+//备注： 个人认为不需要将其强制化出来； 
+反而是模板类型可以强制化；比如说普通，详细日程的，拼红包的等等；
+        
+计划简介；
+开始和结束实现；
+计划的提醒方式；
+公开和私有属性；
+
+
+
 5、网站参考:https://www.rishiqing.com/、https://dida365.com/、http://www.golaravel.com/、http://www.jingoal.com/index.html
+,http://themifycloud.com/demos/templates/KAdmin/KAdmin-Dark/index.html#  ,http://www.layui.com/demo/collapse.html
+https://propulso.io/en  ,,http://www.jq22.com/jquery-info3724

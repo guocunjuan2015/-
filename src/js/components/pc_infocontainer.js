@@ -79,7 +79,7 @@ var PCInfoContainer = React.createClass({
                                 {isChangeWays}
                           </div>
                     </div>
-
+                    <i className="fa fa-angle-double-down down" aria-hidden="true" /*onClick={this.goTo('#features')}*/></i>
                   </div>
                   <div className="section section2 containerWidth">
                       <img className="fl planImage am-slider-title am-scrollspy-init" data-am-scrollspy="{animation: 'slide-left', delay: 120}"  src="./src/images/feature-1.png" alt="logo"/>

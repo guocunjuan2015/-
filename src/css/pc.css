@@ -5,7 +5,7 @@
 .section2{margin-top: 70px !important;}
 .section3{margin-top: 290px !important;}
 .section {height:8rem; text-align: center;  color: #fff;clear: both;}
-.section2 p { position: relative;}
+.section2 p ,.section1{ position: relative;}
 .section3 p { position: relative; bottom: -120%;}
 .section4 p { display: none;}
 .intro-container_l{float: left;padding-top:290px;width: 480px;text-align: left;color:#fff;}
@@ -37,10 +37,18 @@ height:400px;
   background: url(../images/spriteImg.png) 0 0 no-repeat; }
 
 }
-
 .fristFullPage  .quickLogin{margin-top:70px !important;color:#888;}
 .fristFullPage .scanCode{padding-top: 90px !important;}
-
+.down{position:absolute;bottom:0;left:50%;z-index: 999;font-size:75px;animation:bouncing-down 2s infinite;
+  color:rgba(110, 169, 66, 0.6);
+  cursor:pointer;
+ }
+@keyframes bouncing-down
+{
+0%,100%,20%,50%,80%{transform:translateY(0)}
+40%{transform:translateY(-30px)}
+60%{transform:translateY(-15px)}
+}
 
 
 /*登录*/

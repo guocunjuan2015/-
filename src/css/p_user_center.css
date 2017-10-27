@@ -1,0 +1,173 @@
+@charset "UTF-8";
+/* 全局样式定义 Powered by guocunjuan*/
+
+/*个人中心导航*/
+.page-header-topbar{
+position: fixed;right:0;left:0;
+width: 100%;
+height:52px;line-height:52px;
+background: #1E1E1E;
+z-index:999;
+}
+
+#page-wrapper {
+  min-height: 100%;
+  padding: 0 !important;
+  background-color: #f0f2f5;
+  transition: 0.3s all linear;
+}
+.page-header-topbar .logo-text {
+  float: left;
+  width: 220px;
+  display: block;
+  font-weight: lighter;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color:#fff;
+}
+
+.page-header-topbar #menu-toggle {
+  float: left;
+  padding: 0 20px;
+  background: transparent;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border-radius: 0;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+#topbar .topbar-main #menu-toggle i {
+  font-size: 25px;
+}
+
+#sidebar {
+  background: #3C3C3C;
+}
+.navbar-static-side {
+  transition: 0.3s all linear;
+  top:52px;
+}
+
+.navbar-static-side ul li
+{
+   background: #3C3C3C; /* Old browsers */
+   outline: none;
+   color:#d9d9d9;
+}
+
+.navbar-static-side ul li.active a {
+  background: #6EA942; /* Old browsers */
+  transition: 0.2s all ease-in-out;
+  outline: none;
+  color:#FFF;
+}
+.navbar-static-side ul li a {
+  color: #d9d9d9;
+  padding: 15px;
+}
+.navbar-static-side ul li a span.menu-title {
+  margin-left: 10px;
+}
+.navbar-static-side ul li a i {
+  font-size: 16px;
+}
+
+.navbar-static-side ul li a:hover,
+.navbar-static-side ul li a:focus {
+  background: #6EA942; /* Old browsers */
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  color:#FFF !important;
+}
+
+@media (min-width: 768px) {
+  .navbar-static-side {
+    z-index: 1;
+    position: absolute;
+    width: 250px;
+  }
+}
+
+/* Begin Horizontal menu */
+/* Begin Left Sidebar Collapsed */
+.left-side-collapsed .navbar-static-side {
+  width: 55px;
+}
+.left-side-collapsed .navbar-static-side ul#side-menu li.user-panel {
+  display: none;
+}
+.left-side-collapsed .navbar-static-side ul#side-menu li.nav-hover a {
+  height: 50px;
+}
+.left-side-collapsed .navbar-static-side ul#side-menu li.nav-hover a span.menu-title {
+  display: block !important;
+}
+.left-side-collapsed .navbar-static-side ul#side-menu li.nav-hover a span.submenu-title {
+  display: block !important;
+  margin-left: 0;
+}
+.left-side-collapsed .navbar-static-side ul#side-menu li.nav-hover ul.nav-second-level {
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: 55px;
+  width: 195px;
+}
+
+.left-side-collapsed .navbar-static-side ul#side-menu li a span {
+  display: none;
+}
+.left-side-collapsed .navbar-static-side ul#side-menu li a i.fa {
+  font-size: 18px;
+}
+.left-side-collapsed .navbar-static-side ul#side-menu li a span.menu-title {
+  position: absolute;
+  top: 0;
+  left: 55px;
+  padding: 15px;
+  margin-left: 0;
+  width: 195px;
+  height: 50px;
+  background: #000; /* Old browsers */
+  outline: none;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+/*创建计划弹框*/
+.modal-title{font-size: 16px;text-align: center !important;}
+.navbar-account .fa{color:#fff;cursor: pointer;}
+.navbar-account .fa-cog{font-size:20px;}
+.navbar-account .fa-envelope{font-size:16px;}
+.navbar-account li{float: left;margin-left: 14px;min-width:60px;}
+.avatar{margin-top:14px;width:24px !important;height:24px !important;line-height:24px !important;background: #6EA942 !important;font-size: 30px}
+.dropdownList{margin-left:8px;font-size:16px;color:#fff;}
+.ant-avatar > *{line-height: normal !important;}
+
+/*个人中心右下角消息提示*/
+.newsSlide{position: fixed;bottom:0;right: 0;width: 288px;height: 40px;line-height: 40px;z-index:1024;box-shadow:-3px -2px 8px -1px rgba(0,0,0,0.2);}
+.newsSlide .fa-envelope{margin:11px 16px 0 20px;font-size: 16px;color:#6EA942;}
+.newsSlide .fa-commenting{margin:2px;width: 38px;height:36px;line-height:36px;color:#fff;font-size:16px;background:#6EA942;border-radius:2px;text-align: center;}
+/*网页自动加载进度条插件*/
+.pace .pace-progress {
+    background: #6EA942;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    height: 3px;
+
+    -webkit-transition: width 1s;
+    -moz-transition: width 1s;
+    -o-transition: width 1s;
+    transition: width 1s;
+}
+
+.pace-inactive {
+    display: none;
+}
