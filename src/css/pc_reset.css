@@ -14,7 +14,7 @@ ul{margin-left:0;padding-left:0 !important;}
 .ant-modal-header{text-align: center;}
 .ant-modal-footer{display: none;}
 .btn{background:#6EA942;border: 1px solid #6EA942;transition:all .2s ease-in-out;color:#fff}
-.btn:hover,.btn:active{background:#6EA914 !important;border: 1px solid #6EA914 !important;color:#fff}
+.btn:hover,.btn:active{background:#6EA942;border: 1px solid #6EA942; }
 
 
 /*首页导航部分*/

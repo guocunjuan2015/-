@@ -20,7 +20,7 @@ height:400px;
 .intro-container_r .ant-btn{width: 300px;height:40px;font-size: 16px;background: #6EA942;border:1px solid #6EA942;}
 .intro-container_r form{margin-top:26px !important;}
 .fristFullPage form{margin-top:45px !important;}
-.section1{height:100vh;max-height:20rem;background: url(../images/bannerBg.jpg);background-size:cover;}
+.section1{height:100vh;/*max-height:20rem;*/background: url(../images/bannerBg.jpg);background-size:cover;}
 .features-info{margin:240px 0 0 90px;max-width:500px;color:#333;text-align: left;}
 .planImage{margin-left: 220px}
 .section3 .planImage{margin-left: 120px !important;}
