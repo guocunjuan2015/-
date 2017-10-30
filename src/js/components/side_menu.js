@@ -70,7 +70,59 @@ var PCSideMenu = React.createClass({
 
                 <Modal title="创建计划" visible={this.state.visible} onOk={this.hideCreatePlane}
                 onCancel={this.hideCreatePlane} >
+                      <div className="createMain">
+                          <section>
+                                <span className="type-system">计划名称</span>
+                                <input type="text" name="" className="name form-control" placeholder="请输入计划名称" autofocus="true" accesskey="k"/>
+                          </section>
+                          <section className="template-short-list">
+                                <span className="type-system">计划模板</span>
+                                <div className="paln_wrapper clearfix">
+                                    <ul className="fl">
+                                            <li className="cover-item kanban-cover selected">
+                                                   <div className="temp-img-box">
+                                                      <img src="./src/images/modal1.png" alt="封面"/>
+                                                   </div>
+                                                  <span className="temp-name">工作计划</span>
+                                                  <div className="select-box">
+                                                        <i className="icon2-selected fa fa-check-square-o"></i>
+                                                  </div>
+                                                  <span className="temp-preview">预览</span>
+                                            </li>
 
+                                            <li className="cover-item kanban-cover">
+                                                   <div className="temp-img-box">
+                                                      <img src="./src/images/modal1.png" alt="封面"/>
+                                                   </div>
+                                                  <span className="temp-name">工作计划</span>
+                                                  <div className="select-box">
+                                                        <i className="icon2-selected"></i>
+                                                  </div>
+                                                  <span className="temp-preview">预览</span>
+                                            </li>
+
+                                            <li className="cover-item kanban-cover">
+                                                   <div className="temp-img-box">
+                                                      <img src="./src/images/modal1.png" alt="封面"/>
+                                                   </div>
+                                                  <span className="temp-name">工作计划</span>
+                                                  <div className="select-box">
+                                                        <i className="icon2-selected"></i>
+                                                  </div>
+                                                  <span className="temp-preview">预览</span>
+                                            </li>
+                                     </ul>
+                                     <div className="show-more fl">
+                                        <div className="more-box">more</div>
+                                        <span className="type-caption">更多模板</span>
+                                       </div>
+                                </div>
+                          </section>
+                          <section>
+                              <button type="button" className="btn" id="submitModal">创建计划</button>
+                          </section>
+
+                      </div>
               </Modal>
 
          </div>
