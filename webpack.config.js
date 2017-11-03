@@ -28,6 +28,7 @@ module.exports = {
     /*filename: "./src/bundle.js"*/
     filename: "[name].js"
   },
+  devtool:'source-map', //查看源代码方便在浏览器中打断点
   module: {
     loaders: [
       {
