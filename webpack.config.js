@@ -19,7 +19,7 @@ module.exports = {
   //entry: "./src/js/root.js",
 // entry 为多入口
   entry:{
-      root:"./src/js/root.js",
+      root:"./src/js/root.js",  //代码隔离
       vendor:['react']
 
   },
@@ -66,7 +66,7 @@ module.exports = {
     new BabiliPlugin(), //打包工具
     new webpack.optimize.CommonsChunkPlugn({
 
-        name : 'vendor' // 指定公共 bundle 的名字。
+        name : 'vendor' // 指定公共 bundle 的名字。代码隔离
     })
 
   ],
