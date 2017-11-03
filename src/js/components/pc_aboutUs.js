@@ -11,8 +11,8 @@ var PCAboutUs = React.createClass({
 
                   <div>
                       <PCHeader/>
-                          <div className="containerWidth aboutUs">
-                                <img  src="./src/images/abuot_bout.jpg" alt="关于我们"/>
+                          <div className="containerWidth aboutUsZone">
+                                <img style={{paddingTop:'80px',paddingBottom:'40px'}} src="./src/images/abuot_bout.jpg" alt="关于我们"/>
                                         {  /*<div className="aboutUs_l">
                                                 <ul>
                                                     <li>关于我们</li>

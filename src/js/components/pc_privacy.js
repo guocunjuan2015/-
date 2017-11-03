@@ -12,7 +12,7 @@ var PCPrivacy = React.createClass({
                   <div>
                       <PCHeader/>
                           <div className="containerWidth aboutUs">
-                                <img  src="./src/images/abuot_bout.jpg" alt="隐私声明"/>
+                                <img style={{paddingTop:'80px',paddingBottom:'40px'}} src="./src/images/abuot_bout.jpg" alt="隐私声明"/>
                                                 <h3 style={{marginTop:"0"}}>1、我们会收集什么信息？</h3>
                                                 <p>
                                                       自愿选择服务或提供信息的情况下收集您的私人信息

@@ -3,7 +3,7 @@
  * Copyright (C) 2017
  */
  $(function(){
-
+	 var isClosed =  false;
    //锁定菜单选项
    $(window).scroll(function(){
 
@@ -21,7 +21,7 @@
    });
 
     //点击导航显示隐藏左侧边栏
-    var isClosed =  false;
+   
     $("#menu-toggle").click(function(event) {
 
           if(isClosed == true){

@@ -102,9 +102,6 @@ height:400px;
 }
 
 /*关于我们*/
-/*.aboutUs_l{float: left;width: 240px}
-.aboutUs_l li{font-size:16px;line-height: 60px;border-bottom: 1px solid rgba(0,0,0,.08)}*/
-/*.aboutUs_r{float: right;width:720px}*/
-.aboutUs{padding:92px 0 100px 0;}
-.aboutUs p{line-height: 40px;}
-.aboutUs h3{margin-top:30px;font-size: 18px;}
+.aboutUsZone img{padding: 90px 0 60px 0;}
+.aboutUsZone h3{margin-top:30px;font-size: 18px;}
+.aboutUsZone p{line-height: 40px;}
