@@ -4,7 +4,9 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-
+  devServer:{ //根目录添加文件devServer.js，用于创建服务器实例
+	historyApiFallback: true,
+  },
   performance:{
       hints:'warning',
       maxEntrypointSize:10000,
@@ -43,6 +45,7 @@ module.exports = {
             //下面是使用ant-design的配置文件
             test: /\.css?$/,
             loader:'style-loader!css-loader'
+          /*  loader: ExtractTextPlugin.extract("style-loader", "css-loader")*/
       },
       {
             test: /\.less$/,

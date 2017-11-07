@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --env development",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "stats": "webpack --env production --profile --json > stats.json"
   },
   "keywords": [
     "books"
@@ -19,6 +20,7 @@
     "babel-preset-react": "^6.11.1",
     "babelify": "^7.3.0",
     "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^3.0.2",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-hot-loader": "^3.0.0-beta.2",
@@ -29,6 +31,7 @@
   "devDependencies": {
     "antd": "^2.1.0",
     "babili-webpack-plugin": "^0.1.2",
+    "extract-text-webpack-plugin": "^1.0.1",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
     "postcss": "^6.0.13",
