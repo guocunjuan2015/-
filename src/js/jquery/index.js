@@ -20,19 +20,19 @@
       /* Act on the event */
    });
 
+
     //点击导航显示隐藏左侧边栏
-   
     $("#menu-toggle").click(function(event) {
 
           if(isClosed == true){
               $("#sidebar").addClass('is-open');
-              console.log("111");
+
               isClosed = false;
           } else {
 
             $("#sidebar").removeClass('is-open');
             isClosed = true;
-            console.log("222");
+
           }
       /* Act on the event */
  });
@@ -50,5 +50,14 @@
 
     /* Act on the event */
   });
+
+  //首页点击下三角锚链接
+
+  $("#turnToContent").click(function(event) {
+
+    $("html body").animate({scrollTop:'580px'},500);
+
+
+});
 
 });

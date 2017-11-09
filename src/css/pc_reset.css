@@ -7,7 +7,8 @@ a:hover{ text-decoration:none;color:#6EA942 !important;}
 img { border:none;}
 ol,ul,li { list-style:none;margin-left:0;margin-bottom:0;}
 ul{margin-left:0;padding-left:0 !important;}
-.clear,.clearfix{clear: both;}
+.clear{clear: both;}
+.clearfix { zoom:1; }
 .fl{float: left;}
 .fr{float: right;}
 .cssanimations [data-am-scrollspy*=animation]{opacity: 1 !important;}
@@ -24,8 +25,7 @@ ul{margin-left:0;padding-left:0 !important;}
 .pc_menu{float:right;padding-top:25px;font-size:16px;}
 .pc_header{
   position: fixed;left:0;top:0;
-   width:100%;height:78px;/*box-shadow: 1px 0 5px #ccc;*/
-   display: flex;
+   width:100%;height:78px;display: flex;
    z-index:999;
    /*background:#fff;*/
 }
@@ -34,7 +34,7 @@ ul{margin-left:0;padding-left:0 !important;}
  height:78px;
  box-shadow: 1px 0 5px #ccc;
  display: flex;
- z-index:999;
+ z-index:9999;
  background:#fff;color:#333 !important;}
 
 .ant-menu-horizontal{border-bottom:none !important;}

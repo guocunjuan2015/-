@@ -64,7 +64,7 @@ var PCInfoContainer = React.createClass({
               /*二维码展示区域end*/
             return (
               <div id="fullPageContainer">
-                  <div className="section section1">
+                  <div className="section section1 clearfix">
                     <div className="containerWidth fristFullPage">
                           <div className="intro-container_l">
                                 <h2 className="intro-title">
@@ -79,9 +79,11 @@ var PCInfoContainer = React.createClass({
                                 {isChangeWays}
                           </div>
                     </div>
-                    <i className="fa fa-angle-double-down down" aria-hidden="true" ></i>
+                    <i className="fa fa-angle-double-down down" aria-hidden="true" id="turnToContent">
+
+                    </i>
                   </div>
-                  <div className="section section2 containerWidth">
+                  <div className="section section2 containerWidth clearfix">
                       <img className="fl planImage am-slider-title am-scrollspy-init" data-am-scrollspy="{animation: 'slide-left', delay: 120}"  src="./src/images/feature-1.png" alt="logo"/>
                         <div className="features-info fl am-slider-title am-scrollspy-init" data-am-scrollspy="{animation: 'slide-right', delay: 110}">
                             <h3 >计划管理</h3>
@@ -89,7 +91,7 @@ var PCInfoContainer = React.createClass({
                         </div>
 
                   </div>
-                  <div className="section section3 containerWidth">
+                  <div className="section section3 containerWidth clearfix">
                     <div className="features-info fl feature-2 am-slider-title am-scrollspy-init" data-am-scrollspy="{animation: 'slide-left', delay: 130}">
                         <h3>强大的提醒功能</h3>
                         <p>强大的提醒功能，帮你不再拖延</p>

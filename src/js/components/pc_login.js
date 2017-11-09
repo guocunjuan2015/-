@@ -4,6 +4,10 @@ import {Tabs,Form,Button,Input,Icon,Checkbox} from 'antd';
 import {Link} from 'react-router';
 const TabPane = Tabs.TabPane;
 const FormItem = Form.Item;
+
+function hasErrors(fieldsError) {
+  return Object.keys(fieldsError).some(field => fieldsError[field]);
+}
 var PCLogin = React.createClass({
 
         getInitialState(){
@@ -18,8 +22,14 @@ var PCLogin = React.createClass({
                   isCodeVisibility:!this.state.isCodeVisibility
             })
         },
+        componentDidMount() {
+
+          this.props.form.validateFields();
+        },
         render (){
-                const {getFieldDecorator} = this.props.form;
+                const { getFieldDecorator, getFieldsError, getFieldError, isFieldTouched } = this.props.form;
+                const userNameError = isFieldTouched('userName') && getFieldError('userName');
+                const passwordError = isFieldTouched('password') && getFieldError('password');
                 //登录切换
                 const isChangeWays = this.state.isCodeVisibility ?
                 /*登录展示区域start*/
@@ -30,20 +40,32 @@ var PCLogin = React.createClass({
                         </div>
                         <Form  horizontal style={{paddingTop:'60px'}}    /*onSubmit={this.handleSubmit}*/>
 
-                           <FormItem>
+                            <FormItem  validateStatus={userNameError ? 'error' : ''}
+                                 help={userNameError || ''}
+                               >
+                                 {getFieldDecorator('userName', {
+                                   rules: [{ required: true, message: '请输入您的用户名!' }],
+                                 })(
+                                   <p><Input prefix={<Icon type="user" style={{ fontSize: 16}} />} placeholder="请输入您的用户名" /></p>
+                                 )}
+                               </FormItem>
 
-                                     <p>
-                                         <Input prefix={<Icon type="user" style={{ fontSize: 16}} />} placeholder="请输入您的账号" />
-                                     </p>
+                               <FormItem  validateStatus={passwordError ? 'error' : ''}
+                                       help={passwordError || ''}
+                                     >
+                                       {getFieldDecorator('password', {
+                                         rules: [{ required: true, message: '请输入您的密码!' }],
+                                       })(
+                                         <p><Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type="password" placeholder="Password" /></p>
+                                       )}
+                                </FormItem>
 
-                            </FormItem>
+                                <FormItem>
+                                          <p>
+                                             <Input prefix={<Icon type="lock" style={{ fontSize: 16}} />} placeholder="请输入6-16位密码" />
+                                          </p>
 
-                            <FormItem>
-                                      <p>
-                                         <Input prefix={<Icon type="lock" style={{ fontSize: 16}} />} placeholder="请输入6-16位密码" />
-                                      </p>
-
-                             </FormItem>
+                                 </FormItem>
 
                             <FormItem>
                             <p className="forgetPassword">
@@ -55,7 +77,7 @@ var PCLogin = React.createClass({
                                   忘记密码
                                 </Link>
                             </p>
-                            <p><Button type="primary"  htmlType="submit">登录</Button></p>
+                            <p><Button type="primary"  disabled={hasErrors(getFieldsError())}  htmlType="submit">登录</Button></p>
                             </FormItem>
                       </Form>
                   </div>

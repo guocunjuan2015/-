@@ -1,5 +1,6 @@
 var debug = process.env.NODE_ENV !== "production";
 const BabiliPlugin = require("babili-webpack-plugin");//打包插件工具
+/*const ExtractTextPlugin = require('extract-text-webpack-plugin');*/
 var webpack = require('webpack');
 var path = require('path');
 
@@ -32,7 +33,7 @@ module.exports = {
   },
   devtool:'source-map', //查看源代码方便在浏览器中打断点
   module: {
-    loaders: [
+    rules: [
       {
             test: /\.js?$/,
             exclude: /(node_modules)/,
@@ -44,8 +45,12 @@ module.exports = {
       {
             //下面是使用ant-design的配置文件
             test: /\.css?$/,
-            loader:'style-loader!css-loader'
-          /*  loader: ExtractTextPlugin.extract("style-loader", "css-loader")*/
+            /*use: ExtractTextPlugin.extract({
+                  use: "css-loader"
+                })*/
+            /*loader:'style-loader!css-loader'*/
+             use: ["style-loader", "css-loader", "postcss-loader"]
+        /*  loader: ExtractTextPlugin.extract("style-loader", "css-loader")*/
       },
       {
             test: /\.less$/,
@@ -67,6 +72,8 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
     new BabiliPlugin(), //打包工具
+    // 将样式文件独立打包
+/*    new ExtractTextPlugin("styles.css"),*/
     new webpack.optimize.CommonsChunkPlugn({
 
         name : 'vendor' // 指定公共 bundle 的名字。代码隔离

@@ -23,7 +23,7 @@ var Root = React.createClass ({
               return (
               <div>
                     <MediaQuery query='(min-device-width: 1224px)'>
-                        <Router history={hashHistory}>
+                        <Router history={browserHistory}>
                                 <Route path="/" component={PCIndex} ></Route>
                                 <Route path="/pcLogin" component={PCLogin}></Route>
                                 <Route path="/pcRegister" component={PCRegister}></Route>
