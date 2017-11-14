@@ -1,6 +1,10 @@
 var debug = process.env.NODE_ENV !== "production";
 const BabiliPlugin = require("babili-webpack-plugin");//打包插件工具
-/*const ExtractTextPlugin = require('extract-text-webpack-plugin');*/
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const extractTxtplugin =  new ExtractTextPlugin({
+    filename:'./src/css/[name].[contenthash:8].css'
+});
+
 var webpack = require('webpack');
 var path = require('path');
 
@@ -48,9 +52,14 @@ module.exports = {
             /*use: ExtractTextPlugin.extract({
                   use: "css-loader"
                 })*/
-            /*loader:'style-loader!css-loader'*/
-             use: ["style-loader", "css-loader", "postcss-loader"]
-        /*  loader: ExtractTextPlugin.extract("style-loader", "css-loader")*/
+                /*loader: ExtractTextPlugin.extract('style-loader', 'css-loader')*/
+          /* loader:'style-loader!css-loader'*/
+             /*use: ["style-loader", "css-loader", "postcss-loader"]*/
+        /*loader: ExtractTextPlugin.extract("style-loader", "css-loader")*/
+      use: extractTxtplugin.extract({
+             fallback: "style-loader",
+             use: "css-loader"
+        })
       },
       {
             test: /\.less$/,
@@ -66,18 +75,21 @@ module.exports = {
     ]
   },
 
-  plugins: debug ? [] : [
-    //new webpack.HotModuleReplacementPlugin(),使用browserHistory时需要修改的地方
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-    new BabiliPlugin(), //打包工具
+  plugins:[
+  /*  new webpack.HotModuleReplacementPlugin(),使用browserHistory时需要修改的地方
+  /*  new webpack.optimize.DedupePlugin(),*/
+    //new webpack.optimize.OccurrenceOrderPlugin (),*/
+ new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
+  new BabiliPlugin(), ///打包工具*/
     // 将样式文件独立打包
-/*    new ExtractTextPlugin("styles.css"),*/
-    new webpack.optimize.CommonsChunkPlugn({
+    /*new ExtractTextPlugin("styles.css"),*/
+  //结果文件的名称style-[contenthash].css
+
+   new webpack.optimize.CommonsChunkPlugin({
 
         name : 'vendor' // 指定公共 bundle 的名字。代码隔离
-    })
+    }),
+    extractTxtplugin
 
   ],
 };

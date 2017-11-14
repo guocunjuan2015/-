@@ -21,17 +21,19 @@
    });
 
 
+
+
     //点击导航显示隐藏左侧边栏
     $("#menu-toggle").click(function(event) {
 
-          if(isClosed == true){
+          if(isClosed == false){
               $("#sidebar").addClass('is-open');
 
-              isClosed = false;
+              isClosed = true;
           } else {
 
             $("#sidebar").removeClass('is-open');
-            isClosed = true;
+            isClosed = false;
 
           }
       /* Act on the event */
@@ -53,11 +55,12 @@
 
   //首页点击下三角锚链接
 
-  $("#turnToContent").click(function(event) {
+  $("#turnToContent").click(function() {
 
     $("html body").animate({scrollTop:'580px'},500);
 
 
-});
+  });
+
 
 });
