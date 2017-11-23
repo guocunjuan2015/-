@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PCHeader from './pc_header';
 import PCFooter from './pc_footer';
-import {Modal} from 'antd';
+import {Modal,Card} from 'antd';
 /*import createPlaneModal from './createPlaneModal';*/
 var PCRightMenu = React.createClass({
 
@@ -30,9 +30,13 @@ var PCRightMenu = React.createClass({
       render(){
             return (
               <div className="container-right">
-
-                  右侧
-
+                  <Card style={{ width: '100%' }}>
+                        <div>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </div>
+                  </Card>
               </div>
 
             )

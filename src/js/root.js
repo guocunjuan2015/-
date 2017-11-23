@@ -6,6 +6,8 @@ import PCIndex from './components/pc_index';
 import PCLogin from './components/pc_login';
 import PCRegister from './components/pc_register';
 import PCUserCenter from './components/pc_userCenter';
+import Board from './components/board';
+import SysInfos from './components/sysInfos';
 import PCCreatePlan  from './components/pc_create_plan';
 import PCPlanList  from './components/pc_plan_list';
 import ForgetPassword from './components/pc_forgetPassword';
@@ -13,7 +15,6 @@ import MobileIndex from './components/mobile_index';
 import PCAboutUs from './components/pc_aboutUs';
 import PCPrivacy from './components/pc_privacy';
 import MediaQuery from 'react-responsive';//react自适应
-
 import 'antd/dist/antd.css';
 
 var Root = React.createClass ({
@@ -27,10 +28,12 @@ var Root = React.createClass ({
                                 <Route path="/" component={PCIndex} ></Route>
                                 <Route path="/pcLogin" component={PCLogin}></Route>
                                 <Route path="/pcRegister" component={PCRegister}></Route>
+                                <Route path="/forgetPassword" component={ForgetPassword}></Route>
                                 <Route path="/pcCreatePlan" component={PCCreatePlan}></Route>
                                 <Route path="/pcPlanList" component={PCPlanList}></Route>
                                 <Route path="/pusercenter" component={PCUserCenter}></Route>
-                                <Route path="/forgetPassword" component={ForgetPassword}></Route>
+                                <Route path="/board" component={Board}></Route>
+                                <Route path="/sysInfos" component={SysInfos}></Route>
                                 <Route path="/pc_aboutUs" component={PCAboutUs}></Route>
                                 <Route path="/pc_privacy" component={PCPrivacy}></Route>
                         </Router>

@@ -8,7 +8,6 @@ import PCRightMenu from './right_menu';
 import MyNews from './myNews';
 import "../../css/p_user_center.css";
 var PCUserCenter = React.createClass({
-
       render(){
 
 

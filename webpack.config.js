@@ -35,7 +35,7 @@ module.exports = {
     /*filename: "./src/bundle.js"*/
     filename: "[name].js"
   },
-  devtool:'source-map', //查看源代码方便在浏览器中打断点
+/*  devtool:'source-map', *///查看源代码方便在浏览器中打断点
   module: {
     rules: [
       {
@@ -76,15 +76,19 @@ module.exports = {
   },
 
   plugins:[
-  /*  new webpack.HotModuleReplacementPlugin(),使用browserHistory时需要修改的地方
-  /*  new webpack.optimize.DedupePlugin(),*/
-    //new webpack.optimize.OccurrenceOrderPlugin (),*/
- new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-  new BabiliPlugin(), ///打包工具*/
+   new webpack.HotModuleReplacementPlugin(),/*使用browserHistory时需要修改的地方*/
+   new webpack.optimize.DedupePlugin(),
+   new webpack.optimize.OccurrenceOrderPlugin (),
+   new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }), //代码代码压缩混淆
+   new BabiliPlugin(), ///打包工具*/
     // 将样式文件独立打包
     /*new ExtractTextPlugin("styles.css"),*/
   //结果文件的名称style-[contenthash].css
-
+  new webpack.DefinePlugin({
+      'process.env':{
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
    new webpack.optimize.CommonsChunkPlugin({
 
         name : 'vendor' // 指定公共 bundle 的名字。代码隔离

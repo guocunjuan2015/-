@@ -8,8 +8,6 @@ width: 100%;
 height:52px;line-height:52px;
 background: #1E1E1E;
 z-index:999;
-display: flex;
-transition: all .5s;
 }
 
 #page-wrapper {
@@ -161,11 +159,25 @@ transition: all .5s;
 .paln_wrapper li.cover-item{position:relative;float: left;width: 77px;border-radius:2px;text-align:center; cursor: pointer;}
 .paln_wrapper li.cover-item+li{margin-left: 8px;}
 .paln_wrapper .temp-name{margin-top:10px;max-width:77px;display: inline-block;}
-.show-more{margin-left: 8px;width: 77px;text-align:center;}
+.show-more{margin-left: 8px;width: 77px;text-align:center;cursor: pointer;}
 .more-box{width: 100%;height:48px;line-height: 48px;color:#fff;background:#d5d5d5;border-radius:2px;}
 .type-caption{margin-top:11px;display: inline-block;}
 .select-box{position: absolute;top:1px;right:1px;font-size: 16px;text-align:center;color:#6EA942;display: none;}
 .paln_wrapper li.cover-item.selected .select-box{display: block;}
 #submitModal{margin-top:40px;width: 100%;}
+.template-pannel li{position: relative;float: left;width:118px;text-align: center;}
+.template-pannel .wrapper{width: 100%;height:99px;border-radius:3px;background: #e1e1e1;}
 /*个人中心右侧内容展示*/
 .container-right{position: absolute;left:170px;top:60px;}
+
+/*自定义模板*/
+.template-header {border-bottom: 1px solid rgb(234,234,234)}
+.template-header h5{height:50px;line-height: 50px;font-size:16px;text-align:center;}
+.template-body{position: absolute;right: 0;left: 0;top:75px;bottom: 0;}
+.addCard{padding:16px;width: 262px;text-align: center;vertical-align:top;border-radius:2px;background:#f9f9fa;border: 1px solid #eaeaea;transition:all .3s;cursor: pointer;}
+.addCard-ul{height: 22px;}
+.addCard i{margin-right: 4px;color: #d6dde8;font-size: 16px;transition:all .3s;}
+.addCard-container input{margin-bottom: 10px}
+.addCard-container span{margin:0 10px 10px 0;font-size:12px;}
+.addCard-container{display: none;}
+/**/

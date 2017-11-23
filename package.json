@@ -40,6 +40,7 @@
     "react-responsive": "^1.2.1",
     "react-router": "^2.8.1",
     "react-touch-loader": "^1.0.0",
+    "webpack": "^2.7.0",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.18.2",
     "whatwg-fetch": "^1.1.0"
