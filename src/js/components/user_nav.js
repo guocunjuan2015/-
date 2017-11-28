@@ -28,33 +28,16 @@ var PCUserNav = React.createClass({
 
           if(this.state.isClosed == false){
               $("#sidebar").addClass('is-open');
+              $(".container-right").css("left","65px");
 
           } else {
             $("#sidebar").removeClass('is-open');
+            $(".container-right").css("left","170px");
 
           }
 
       },
-      //邀请好友弹框
-      handleFriends(isVisibileFriends){
 
-          this.setState({
-
-            isVisibileFriends
-
-          })
-
-      },
-      //账户设置
-      handleAccountSet(isVisibileAccountSet){
-
-          this.setState({
-
-            isVisibileAccountSet
-
-          })
-
-      },
       render(){
             const noticeTip =
             <div className="noticeTip">
@@ -72,10 +55,10 @@ var PCUserNav = React.createClass({
                       <a  rel="noopener noreferrer">我的任务</a>
                     </Menu.Item>
                     <Menu.Item>
-                      <a  rel="noopener noreferrer" onClick={()=>this.handleAccountSet(true)}>账号设置</a>
+                      <a  rel="noopener noreferrer" data-toggle="modal" data-target="#accountSet">账号设置</a>
                     </Menu.Item>
                     <Menu.Item>
-                      <a  rel="noopener noreferrer" onClick={()=>this.handleFriends(true)}>邀请好友</a>
+                      <a  rel="noopener noreferrer" data-toggle="modal" data-target="#inviteFriends">邀请好友</a>
                     </Menu.Item>
                     <Menu.Item>
                       <a  rel="noopener noreferrer">退出登录</a>
@@ -83,7 +66,7 @@ var PCUserNav = React.createClass({
                   </Menu>
             );
             return (
-              <div className="demo1">
+              <div>
                   {/*网页自动加载进度条START*/}
                     <div className="pace  pace-inactive">
                       <div className="pace-progress" data-progress-text="100%" data-progress={99} style={{width: '100%'}}>
@@ -121,35 +104,6 @@ var PCUserNav = React.createClass({
                             </div>
                       </div>
                     {/*END page-header-topbar*/}
-                    <Modal title="邀请好友" visible={this.state.isVisibileFriends} onOk={() => this.handleFriends(false)}
-                      onCancel={() => this.handleFriends(false)}>
-                      <div className="invite-body">
-                          <div className="address-desc">您的专属邀请链接：</div>
-                                  <div className="invite-address-box">
-                                      <input id="invite-address" className="form-control" readonly="" value="https://mubu.com/inv/439807"/>
-                                      <span id="invite-copy-link">
-                                            复制
-                                      </span>
-                                  </div>
-                                  <div className="qrcode-container clearfix">
-                                      <div id="invite-qrcode" className="fl invite-qrcode">
-                                          <img src="/src/images/code.jpg"/>
-                                      </div>
-                                      <div className="fl qrcode-desc">
-                                          您的专属邀请二维码
-                                          <div>手机扫一扫</div>
-                                      </div>
-                                </div>
-                          </div>
-                    </Modal>
-                    {/*账户设置*/}
-                    <Modal title="账户设置" style={{width:'320px'}} visible={this.state.isVisibileAccountSet} onOk={() => this.handleAccountSet(false)}
-                      onCancel={() => this.handleAccountSet(false)}>
-                          <div className="accountSet-body">
-
-                           </div>
-                    </Modal>
-
                </div>
             )
 

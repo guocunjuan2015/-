@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PCHeader from './pc_header';
 import PCFooter from './pc_footer';
 import {Link} from 'react-router';
-/*import MaskLayer from './mask_layer';*/
+import MaskLayer from './mask_layer';
 import {Modal} from 'antd';
 
 var PCSideMenu = React.createClass({
@@ -84,7 +84,7 @@ var PCSideMenu = React.createClass({
                       <div className="sidebar-collapse menu-scroll">
                         <ul id="side-menu" className="nav">
                                 <li className="active">
-                                      <a href="javascript:;" onClick={() => this.showcCreatePlane(true)}>
+                                      <a href="javascript:;" data-toggle="modal" data-target="#creatPlanLayer">
                                           <i className="fa fa-edit">
                                                 <div className="icon-bg bg-orange" />
                                           </i>
@@ -116,80 +116,8 @@ var PCSideMenu = React.createClass({
                       </div>
                     </nav>
                 {/*END SIDEBAR MENU*/}
-
-                  <Modal title="创建计划" class="creatPlanLayer" visible={this.state.modal1Visible} onOk={() => this.showcCreatePlane(false)}
-                  onCancel={() => this.showcCreatePlane(false)} >
-                        <div className="createMain">
-                            <section>
-                                  <span className="type-system">计划名称</span>
-                                  <input type="text" name="" className="name form-control" placeholder="请输入计划名称" autofocus="true" accesskey="k"/>
-                            </section>
-                            <section className="template-short-list">
-                                  <span className="type-system">计划模板</span>
-                                  <div className="paln_wrapper clearfix">
-                                      <ul className="fl plan_template">
-                                              <li className="cover-item selected" ref="selected" onMouseEnter={this.onmouseenter} onMouseLeave={this.onmouseleave}>
-                                                     <div className="temp-img-box">
-                                                        <img src="./src/images/modal1.png" alt="封面"/>
-                                                     </div>
-                                                    <span className="temp-name">工作计划</span>
-                                                    <div className="select-box">
-                                                          <i className="icon2-selected fa fa-check-square-o"></i>
-                                                    </div>
-                                                    <span className="temp-preview">预览</span>
-                                              </li>
-                                              <li className="cover-item" ref="selected" onMouseEnter={this.onmouseenter} onMouseLeave={this.onmouseleave}>
-                                                     <div className="temp-img-box">
-                                                        <img src="./src/images/modal1.png" alt="封面"/>
-                                                     </div>
-                                                    <span className="temp-name">工作计划</span>
-                                                    <div className="select-box">
-                                                          <i className="icon2-selected fa fa-check-square-o"></i>
-                                                    </div>
-                                                    <span className="temp-preview">预览</span>
-                                              </li>
-                                              <li className="cover-item" ref="selected" onMouseEnter={this.onmouseenter} onMouseLeave={this.onmouseleave}>
-                                                     <div className="temp-img-box">
-                                                        <img src="./src/images/modal1.png" alt="封面"/>
-                                                     </div>
-                                                    <span className="temp-name">工作计划</span>
-                                                    <div className="select-box">
-                                                          <i className="icon2-selected fa fa-check-square-o"></i>
-                                                    </div>
-                                                    <span className="temp-preview">预览</span>
-                                              </li>
-
-                                       </ul>
-                                       <div className="show-more fl" onClick={() => this.handleMoreModel(true)}>
-                                          <div className="more-box">more</div>
-                                          <span className="type-caption">更多模板</span>
-                                       </div>
-                                  </div>
-                            </section>
-                            <section>
-                                <button type="button" className="btn" id="submitModal">创建计划</button>
-                            </section>
-
-                        </div>
-                </Modal>
-
-                <Modal title="计划模板" visible={this.state.modal2Visible} onOk={() => this.handleMoreModel(false)}
-                onCancel={() => this.handleMoreModel(false)} >
-                        <div className="template-pannel">
-                              <ul className="clearfix">
-                                  <li>
-                                      <Link to={`/board`}>
-                                        <div className="wrapper set">
-                                            <i className="fa fa-plus-circle"></i>
-                                         </div>
-                                         <span className="temp-name">创建模板</span>
-                                      </Link>
-                                  </li>
-
-                              </ul>
-                        </div>
-              </Modal>
-
+                  <MaskLayer/>
+            
              </div>
 
 
