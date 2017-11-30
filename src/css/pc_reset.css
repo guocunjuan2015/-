@@ -35,7 +35,8 @@ ul{margin-left:0;padding-left:0 !important;}
  box-shadow: 1px 0 5px #ccc;
  display: flex;
  z-index:9999;
- background:#fff;color:#333 !important;}
+ background:#fff;color:#333 !important;
+}
 
 .ant-menu-horizontal{border-bottom:none !important;}
 .pc_header ul{background: none !important}

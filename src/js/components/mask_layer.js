@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Link} from 'react-router';
 import {Upload,Modal,Icon,Tabs} from 'antd';
+import {CopyToClipboard} from 'react-copy-to-clipboard'; //React复制到剪贴板
 const TabPane = Tabs.TabPane;
 var MaskLayer = React.createClass({
       getInitialState(){
@@ -9,12 +10,16 @@ var MaskLayer = React.createClass({
             previewVisible: false,
             previewImage: '',
             fileList: [{
-              uid: -1,
-              name: 'xxx.png',
-              status: 'done',
-              url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+            uid: -1,
+            name: 'xxx.png',
+            status: 'done',
+            url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
             }],
-            tabPosition: 'left'
+            isVisibileBindPhone : false ,
+            isExchange : false ,
+            userId : 0 ,
+            value: 'https://xxx.com',
+            copied: false
 
           }
       },
@@ -25,12 +30,56 @@ var MaskLayer = React.createClass({
       handleChange({ fileList }){
           this.setState({ fileList })
       },
+      //个人设置左侧鼠标经过li状态
+      onmouseenter(event){
+
+          this.setState({
+
+              isExchange: !this.state.isExchange
+
+          })
+          var $this = $(".leftWarp li");
+          if(this.state.isExchange == false){
+              $(".accountSetLogins").hide();
+              $(".basicAvatar").show();
+              $this.addClass('current');
+          } else {
+              $(".accountSetLogins").show();
+              $(".basicAvatar").hide();
+              $this.removeClass('current');
+          }
+
+      },
+      //绑定手机号操作
+      handleBindPhone(){
+
+          this.setState({
+
+            isVisibileBindPhone: !this.state.isVisibileBindPhone
+
+          })
+          if(this.state.isVisibileBindPhone == false){
+
+            $(".editing").show(500);
+
+          } else {
+
+            $(".editing").hide(500);
+          }
+      },
+      onChange({target: {value}}) {
+         this.setState({value, copied: false});
+        },
+
+
+        onCopy() {
+         this.setState({copied: true});
+      },
       render(){
             const { previewVisible, previewImage, fileList } = this.state;
             const uploadButton = (
               <div>
-              添加头像
-
+                  添加头像
               </div>
             );
             return (
@@ -135,10 +184,12 @@ var MaskLayer = React.createClass({
                                     <div className="invite-body">
                                         <div className="address-desc">您的专属邀请链接：</div>
                                                 <div className="invite-address-box">
-                                                    <input id="invite-address" className="form-control" readonly="" value="https://xxx.com/"/>
-                                                    <span id="invite-copy-link">
-                                                          复制
-                                                    </span>
+                                                   <input id="invite-address" value={this.state.value} size={10} onChange={this.onChange} className="form-control" readonly=""/>
+                                                    <CopyToClipboard text={this.state.value} onCopy={this.onCopy}>
+                                                        <span id="invite-copy-link">
+                                                              复制
+                                                        </span>
+                                                    </CopyToClipboard>
                                                 </div>
                                                 <div className="qrcode-container clearfix">
                                                     <div id="invite-qrcode" className="fl invite-qrcode">
@@ -163,14 +214,14 @@ var MaskLayer = React.createClass({
                                           <h4 className="appLeftHeader">个人设置</h4>
                                           <div className="leftWarp">
                                               <ul>
-                                                    <li><i className="fa fa-user"></i>基本信息</li>
-                                                    <li><i className="fa fa-lock"></i>账号密码</li>
+                                                    <li onMouseEnter={this.onmouseenter} onMouseLeave={this.onmouseleave}><i className="fa fa-user"></i>基本信息</li>
+                                                    <li onMouseEnter={this.onmouseenter} onMouseLeave={this.onmouseleave}><i className="fa fa-lock"></i>账号密码</li>
                                               </ul>
                                           </div>
                                       </div>
                                       <div className="fl accountSet-r">
 
-                                            <div className="basicInfoDetail">
+                                            <div className="basicInfoDetail  basicAvatar clearfix">
                                                  <ul>
                                                     <li className="clearfix">
                                                        <span className="leftSpan myAvatar">头像</span>
@@ -200,6 +251,62 @@ var MaskLayer = React.createClass({
                                                     </li>
 
                                                  </ul>
+                                            </div>
+
+                                            {/*账号密码设置*/}
+                                            <div className="basicInfoDetail accountSetLogins">
+                                                <div className="loginAccount clearfix">
+                                                      <h5>登录账号</h5>
+                                                      <ul>
+                                                            <li className="phone">
+                                                              <div className="leftSpan">手机</div>
+                                                              <div className="rightContent">
+                                                                <div className="showing">
+                                                                  <span className="leftSpan">未绑定</span>
+                                                                  <span className="btn-icon-blue modify" onClick={this.handleBindPhone}>绑定</span>
+                                                                </div>
+                                                                <div className="editing">
+                                                                  <div className="phoneLine clearfix">
+                                                                    <input type="text"  maxLength={11} defaultValue className="fl form-control phoneNumber" />
+                                                                    <div className="fl buttonPlace">
+                                                                      <span className="btn sendValiCode">短信验证</span>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div className="phoneLine clearfix">
+                                                                    <input type="text" placeholder="输入短信验证码" className="fl form-control valiCode" maxLength={4} />
+                                                                    <div className="fl buttonPlace">
+                                                                      <span className="btn confirm">确定</span>
+                                                                    </div>
+                                                                  </div>
+                                                                  <span className="btn btn-outline-danger cancel">取消</span>
+                                                                </div>
+                                                              </div>
+                                                            </li>
+                                                      </ul>
+                                                    </div>
+
+                                                    {/*登录密码*/}
+                                                    <div className="loginPassword">
+                                                        <h5 className="loginPsw">登录密码</h5>
+                                                        <ul>
+                                                            <li className="clearfix">
+                                                                <div className="leftSpan">旧密码</div>
+                                                                <input type="text" placeholder="输入短信验证码" className="fl form-control valiCode" maxLength={4} />
+                                                            </li>
+                                                            <li className="clearfix">
+                                                                <div className="leftSpan">新密码</div>
+                                                                <input type="text" placeholder="输入短信验证码" className="fl form-control valiCode" maxLength={4} />
+                                                            </li>
+                                                            <li className="clearfix">
+                                                                <div className="leftSpan">确认密码</div>
+                                                                <input type="text" placeholder="输入短信验证码" className="fl form-control valiCode" maxLength={4} />
+                                                            </li>
+                                                            <li className="clearfix">
+                                                                  <span className="btn  login-save">保存</span>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
                                             </div>
 
                                       </div>
