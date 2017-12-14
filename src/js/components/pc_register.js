@@ -16,7 +16,7 @@ var PCLogin = React.createClass({
                                               <div className="pcLogin" style={{paddingTop:'45px'}}>
                                                         <Form horizontal   onSubmit={this.handleSubmit}>
                                                             <FormItem>
-                                                                <p><Input prefix={<Icon type="user" style={{ fontSize: 16}} />} placeholder="请输入您的手机号" /></p>
+                                                                <p><Input maxlength="11"  prefix={<Icon type="user" style={{ fontSize: 16}} />}  placeholder="请输入您的手机号" /></p>
                                                             </FormItem>
                                                             <FormItem>
                                                                 <p><Input prefix={<Icon type="lock" style={{fontSize: 16}} />} type="password" placeholder=" 需由6-20位数字、字母或符号组成" /></p>

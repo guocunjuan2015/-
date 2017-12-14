@@ -156,7 +156,7 @@ z-index:999;
 .modal-backdrop{background: rgba(200,200,200,.72);}
 .creatPlanLayer,.inviteFriends{width:380px !important;}
 .createModal{width:580px !important;}
-.accountSet{width:950px !important;}
+.accountSet{width:800px !important;}
 .type-system{margin-bottom: 10px;display: block;font-size: 14px;color:#666;}
 .createMain,.template-pannel{margin:20px 0 20px 0;padding:0 20px 0 20px;}
 .createMain section{margin-bottom:20px;}
